@@ -1,52 +1,50 @@
-# Japanese-RAG
+# 日本語 RAG
 
-A collection of methods, models, resources that could help to improve RAG (retrieval augmented generation). Especially focus on Japanese, may benefit other non-English language as well.
+このリポジトリは、日本語検索拡張生成（RAG）を強化するための方法論、モデル、リソースのコレクションです。
 
-# Improve RAG performance
+## RAG パフォーマンスの向上
 
-RAG applications basically have 3 components:
+RAG アプリケーションは、基本的に 3 つの主要なコンポーネントで構成されています：
 
-1. Data Loader & Indexing
-2. Retrieve
-3. Synthesis
+1. **データローダー＆インデキシング**
+2. **検索**
+3. **生成**
 
-Here is a collection of useful resources that could potentially improve Japanese RAG application's quality.
+### データローダー＆インデキシング
 
-## Data Loader & Indexing
+- **データローダー：**
 
-- Data Loader:
+  - [PaddleOCR-日本語](https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.7/doc/doc_i18n/README_%E6%97%A5%E6%9C%AC%E8%AA%9E.md)：日本語テキスト抽出のための OCR ツール。
+  - [PDF 内の表の処理](https://webcache.googleusercontent.com/search?q=cache:https://levelup.gitconnected.com/a-guide-to-processing-tables-in-rag-pipelines-with-llamaindex-and-unstructuredio-3500c8f917a7&strip=0&vwsrc=1&referer=medium-parser)：PDF ドキュメント内の表データを扱う技術。
+  - 私のカスタムパーサー（DOCX 変換された HTML 用、近日オープンソース化予定）。
 
-  - [PaddleOCR-Japanese](https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.7/doc/doc_i18n/README_%E6%97%A5%E6%9C%AC%E8%AA%9E.md)
-  - [Deal with table in PDF](https://webcache.googleusercontent.com/search?q=cache:https://levelup.gitconnected.com/a-guide-to-processing-tables-in-rag-pipelines-with-llamaindex-and-unstructuredio-3500c8f917a7&strip=0&vwsrc=1&referer=medium-parser)
-  - My custom parser for docx converted HTML (to be open sourced)
+- **Embedding モデル:**
 
-- Embedding models:
+  - OpenAI Embedding (text-embedding-3-small, text-embedding-3-large).
+  - [BGE-Embedding](https://github.com/FlagOpen/FlagEmbedding?tab=readme-ov-file): 多言語用高性能 Embedding モデル
 
-  - OpenAI embedding (text-embedding-3-small, text-embedding-3-large)
-  - [BGE-Embedding](https://github.com/FlagOpen/FlagEmbedding?tab=readme-ov-file)
+- **Fine-tuning Embeddings:**
+  - [Fine-tune Embeddings with LlamaIndex](https://github.com/run-llama/finetune-embedding): 日本語専門文書のために Finetuning
 
-- Finetune Embedding for your documents:
-  - [Finetune embedding with llamaindex](https://github.com/run-llama/finetune-embedding)
+### Retrieval
 
-# Retrieve
+- **Re-rankers:**
 
-- Reranker:
+  - [BGE Re-ranker](https://github.com/FlagOpen/FlagEmbedding/tree/master/FlagEmbedding/reranker): 多言語対応の Reranker 商用モデル
+  - [Cohere Re-ranker](https://cohere.com/rerank):
+  - [BGE Re-ranker](https://github.com/FlagOpen/FlagEmbedding/tree/master/FlagEmbedding/reranker): 多言語対応の Reranker オープンソースモデル
 
-  - [Cohere reranker](https://cohere.com/rerank)
-  - [BGE reranker](https://github.com/FlagOpen/FlagEmbedding/tree/master/FlagEmbedding/reranker)
+- **Retrievers:**
+  - [Experiment with Various Retrievers in LlamaIndex Modules](https://docs.llamaindex.ai/en/stable/module_guides/querying/retriever/retrievers.html): 様々な Retriever の集合
 
-- Retriever
-  - [Try different retrievers in llamaindex modules](https://docs.llamaindex.ai/en/stable/module_guides/querying/retriever/retrievers.html)
+### 合成
 
-## Synthesis
+GPT-4 はほとんどのシナリオで良好に機能しますが、カスタマイズされた結果が必要な場合は、日本語 LLM を使用するか、オープンソースの LLM をファインチューニングすることを検討してください。
 
-GPT-4 Performs good in most cases, but if you need tailered results, may consider choose a Japanese LLM, or finetune a open-source LLM.
+- [日本語 LLM](https://github.com/llm-jp/awesome-japanese-llm)：日本語言語モデルのコンパイル。
 
-- [Japanese LLMs](https://github.com/llm-jp/awesome-japanese-llm)
+### すべての言語に適用可能な一般的な方法論
 
-## General Methodology applys to all language:
-
-- [12 RAG Pain Points and Proposed Solutions
-  ](https://towardsdatascience.com/12-rag-pain-points-and-proposed-solutions-43709939a28c)
-- [Ollama to easily host model](https://github.com/ollama/ollama)
-- [Paramaeter tuning for RAG with Llamaindex](https://docs.llamaindex.ai/en/stable/examples/param_optimizer/param_optimizer.html)
+- [12 の RAG の痛点と提案された解決策](https://towardsdatascience.com/12-rag-pain-points-and-proposed-solutions-43709939
+- [Ollama ーモデルホスティング](https://github.com/ollama/ollama)
+- [パラメータチューニングー LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/param_optimizer/param_optimizer.html)
