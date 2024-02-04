@@ -1,3 +1,5 @@
+[日本語](README.md) | [English](README_en.md)
+
 # 日本語 RAG
 
 このリポジトリは、日本語検索拡張生成（RAG）を強化するための方法論、モデル、リソースのコレクションです。
@@ -48,3 +50,7 @@ GPT-4 はほとんどのシナリオで良好に機能しますが、カスタ�
 - [12 の RAG の痛点と提案された解決策](https://towardsdatascience.com/12-rag-pain-points-and-proposed-solutions-43709939
 - [Ollama ーモデルホスティング](https://github.com/ollama/ollama)
 - [パラメータチューニングー LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/param_optimizer/param_optimizer.html)
+
+# 貢献
+
+このリポジトリへの貢献を歓迎します！リソース、モデル、または方法論の改善についての提案がある場合は、プルリクエストを送信するか、イシューを開いてください。一緒により良い日本語 RAG を作りましょう。

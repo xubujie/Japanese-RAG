@@ -49,3 +49,7 @@ While GPT-4 performs well in most scenarios, tailored results might require usin
 - [12 RAG Pain Points and Proposed Solutions](https://towardsdatascience.com/12-rag-pain-points-and-proposed-solutions-43709939a28c): Identifying and addressing common challenges in RAG.
 - [Ollama for Easy Model Hosting](https://github.com/ollama/ollama): Simplify the hosting of your models.
 - [Parameter Tuning for RAG with LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/param_optimizer/param_optimizer.html): Optimize your RAG parameters for better performance.
+
+## Contribution
+
+Welcome contributions to this repository! Let's help to improve RAG in Japanese together.
