@@ -1,3 +1,13 @@
+[日本語](README.md) | [English](README_en.md)
+
+- [Japanese RAG](#japanese-rag)
+  - [Enhancing RAG Performance](#enhancing-rag-performance)
+    - [Data Loader \& Indexing](#data-loader--indexing)
+    - [Retrieval](#retrieval)
+    - [Synthesis](#synthesis)
+    - [General Methodology Applicable to All Languages](#general-methodology-applicable-to-all-languages)
+  - [Contribution](#contribution)
+
 # Japanese RAG
 
 This repo is dedicated to a collection of methodologies, models, and resources aimed at enhancing Retrieval Augmented Generation (RAG), with a particular emphasis on Japanese.
