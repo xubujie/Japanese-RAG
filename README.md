@@ -1,5 +1,13 @@
 [日本語](README.md) | [English](README_en.md)
 
+- [日本語 RAG](#日本語-rag)
+  - [RAG パフォーマンスの向上](#rag-パフォーマンスの向上)
+    - [データローダー＆インデキシング](#データローダーインデキシング)
+    - [Retrieval](#retrieval)
+    - [生成](#生成)
+    - [すべての言語に適用可能な一般的な方法論](#すべての言語に適用可能な一般的な方法論)
+- [貢献](#貢献)
+
 # 日本語 RAG
 
 このリポジトリは、日本語検索拡張生成（RAG）を強化するための方法論、モデル、リソースのコレクションです。
@@ -39,7 +47,7 @@ RAG アプリケーションは、基本的に 3 つの主要なコンポーネ�
 - **Retrievers:**
   - [Experiment with Various Retrievers in LlamaIndex Modules](https://docs.llamaindex.ai/en/stable/module_guides/querying/retriever/retrievers.html): 様々な Retriever の集合
 
-### 合成
+### 生成
 
 GPT-4 はほとんどのシナリオで良好に機能しますが、カスタマイズされた結果が必要な場合は、日本語 LLM を使用するか、オープンソースの LLM をファインチューニングすることを検討してください。
 
@@ -47,7 +55,7 @@ GPT-4 はほとんどのシナリオで良好に機能しますが、カスタ�
 
 ### すべての言語に適用可能な一般的な方法論
 
-- [12 の RAG の痛点と提案された解決策](https://towardsdatascience.com/12-rag-pain-points-and-proposed-solutions-43709939
+- [12 の RAG の痛点と提案された解決策](https://towardsdatascience.com/12-rag-pain-points-and-proposed-solutions-43709939)
 - [Ollama ーモデルホスティング](https://github.com/ollama/ollama)
 - [パラメータチューニングー LlamaIndex](https://docs.llamaindex.ai/en/stable/examples/param_optimizer/param_optimizer.html)
 
