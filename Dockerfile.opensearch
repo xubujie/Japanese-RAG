@@ -1,0 +1,20 @@
+# Use the official OpenSearch image
+FROM opensearchproject/opensearch:2.8.0
+
+# Set the OpenSearch home directory as the working directory
+WORKDIR /usr/share/opensearch
+# Install necessary utilities
+USER root
+RUN yum update -y && yum install -y unzip wget
+USER opensearch
+# Install the Sudachi plugin
+RUN bin/opensearch-plugin install https://github.com/WorksApplications/elasticsearch-sudachi/releases/download/v3.1.0/opensearch-2.8.0-analysis-sudachi-3.1.0.zip
+
+# Download the Sudachi dictionary, extract it, and place it in the correct directory
+RUN curl -L http://sudachi.s3-website-ap-northeast-1.amazonaws.com/sudachidict/sudachi-dictionary-latest-full.zip -o sudachi-dict.zip \
+    && unzip sudachi-dict.zip -d config/sudachi/ \
+    && mv config/sudachi/sudachi-dictionary-*/system_full.dic config/sudachi/system_full.dic \
+    && rm -rf sudachi-dict.zip config/sudachi/sudachi-dictionary-*/
+
+# Set the container's main command to run OpenSearch
+CMD ["bin/opensearch"]
