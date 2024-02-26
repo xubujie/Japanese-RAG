@@ -30,6 +30,30 @@ Below is a curated list of valuable resources intended to elevate the quality of
   - [Processing Tables in PDFs](https://webcache.googleusercontent.com/search?q=cache:https://levelup.gitconnected.com/a-guide-to-processing-tables-in-rag-pipelines-with-llamaindex-and-unstructuredio-3500c8f917a7&strip=0&vwsrc=1&referer=medium-parser): Techniques for handling table data within PDF documents.
   - My custom parser for DOCX-converted HTML (to be open-sourced soon).
 
+- **Japanese Tokenizer**: for hybrid search
+
+  - [sudachi](https://github.com/WorksApplications/Sudachi)
+  - [kuromoji](https://github.com/atilika/kuromoji)
+  - [mecab](https://github.com/taku910/mecab)
+
+---
+
+|                              | Sudachi | MeCab     | kuromoji   |
+| :--------------------------- | :------ | :-------- | :--------- |
+| Multiple Segmentation        | Yes     | No        | Limited ^a |
+| Normalization                | Yes     | No        | Limited ^b |
+| Joining, Correction          | Yes     | No        | Limited ^b |
+| Use multiple user dictionary | Yes     | Yes       | No         |
+| Saving Memory                | Good ^c | Poor      | Good       |
+| Accuracy                     | Good    | Good      | Good       |
+| Speed                        | Good    | Excellent | Good       |
+
+- ^a: approximation with n-best
+- ^b: with Lucene filters
+- ^c: memory sharing with multiple Java VMs
+
+---
+
 - **Embedding Models:**
 
   - OpenAI Embedding (text-embedding-3-small, text-embedding-3-large).

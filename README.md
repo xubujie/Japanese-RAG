@@ -28,6 +28,30 @@ RAG アプリケーションは、基本的に 3 つの主要なコンポーネ�
   - [PDF 内の表の処理](https://webcache.googleusercontent.com/search?q=cache:https://levelup.gitconnected.com/a-guide-to-processing-tables-in-rag-pipelines-with-llamaindex-and-unstructuredio-3500c8f917a7&strip=0&vwsrc=1&referer=medium-parser)：PDF ドキュメント内の表データを扱う技術。
   - 私のカスタムパーサー（DOCX 変換された HTML 用、近日オープンソース化予定）。
 
+- **日本語 Tokenizer**: for hybrid search
+
+  - [sudachi](https://github.com/WorksApplications/Sudachi)
+  - [kuromoji](https://github.com/atilika/kuromoji)
+  - [mecab](https://github.com/taku910/mecab)
+
+---
+
+|                              | Sudachi | MeCab     | kuromoji   |
+| :--------------------------- | :------ | :-------- | :--------- |
+| Multiple Segmentation        | Yes     | No        | Limited ^a |
+| Normalization                | Yes     | No        | Limited ^b |
+| Joining, Correction          | Yes     | No        | Limited ^b |
+| Use multiple user dictionary | Yes     | Yes       | No         |
+| Saving Memory                | Good ^c | Poor      | Good       |
+| Accuracy                     | Good    | Good      | Good       |
+| Speed                        | Good    | Excellent | Good       |
+
+- ^a: approximation with n-best
+- ^b: with Lucene filters
+- ^c: memory sharing with multiple Java VMs
+
+---
+
 - **Embedding モデル:**
 
   - OpenAI Embedding (text-embedding-3-small, text-embedding-3-large).
